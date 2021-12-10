@@ -1,0 +1,9 @@
+name: Wait for ports
+description: Waits for ports to be available
+inputs:
+  ports:
+    description: Comma separated list of ports to wait for
+    required: true
+runs:
+  using: node16
+  main: index.js
