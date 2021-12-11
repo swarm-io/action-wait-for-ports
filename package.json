@@ -1,6 +1,6 @@
 {
-  "name": "actions-wait-for-ports",
-  "version": "1.0.0",
+  "name": "action-wait-for-ports",
+  "version": "0.0.0",
   "description": "A github action to wait for ports to be available",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/swarm-io/actions-wait-for-ports/issues"
+    "url": "https://github.com/swarm-io/action-wait-for-ports/issues"
   },
-  "homepage": "https://github.com/swarm-io/actions-wait-for-ports#readme",
+  "homepage": "https://github.com/swarm-io/action-wait-for-ports#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",

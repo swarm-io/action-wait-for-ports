@@ -1,0 +1,31 @@
+name: Bump version
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - package.json
+jobs:
+  update-dependencies:
+    name: Update dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Configure git
+        uses: dawidd6/action-git-user-config@v1
+      - name: actions/setup-node
+        uses: actions/setup-node@v1.4.1
+        with:
+          node-version: "latest"
+      - name: npm install
+        uses: bahmutov/npm-install@v1
+      - name: commit
+        shell: bash
+        run: |
+          git commit -am "updated npm dependencies"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ inputs.github-token }}
+          branch: ${{ github.ref }}
