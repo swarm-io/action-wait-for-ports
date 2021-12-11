@@ -1,5 +1,8 @@
 name: Update dependencies
 on:
+  push:
+    branches:
+      - init
   pull_request:
     branches:
       - main
