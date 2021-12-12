@@ -14,11 +14,12 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
       - name: Checkout
         uses: actions/checkout@v2
-#        with:
-#          ref: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v2
         with:
-          cache: npm
+          node-version: 16
+#          cache: npm uncomment when caching is fixed https://github.com/actions/cache/issues/698
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
       - name: NPM CI
