@@ -4,7 +4,11 @@ on:
     branches:
       - main
     paths:
-      - action.yaml
+      - 'action.yaml'
+      - 'node_modules/**'
+      - 'index.js'
+      - 'package.json'
+      - 'package-lock.json'
 jobs:
   bump-version:
     name: Bump version
