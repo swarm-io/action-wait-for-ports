@@ -10,23 +10,37 @@ jobs:
     name: Update dependencies
     runs-on: ubuntu-latest
     steps:
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
+      #      - name: Pull
+      #        run: |
+      #          git status
+      #          git pull
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-#          cache: 'npm' uncomment when cache issues are resolved https://github.com/actions/cache/issues/698
-      - name: Run npm install
+      #          cache: 'npm' uncomment when cache issues are resolved https://github.com/actions/cache/issues/698
+      - name: Run npm ci
         run: |
-          npm install
-      - name: commit
+          npm ci
+      - name: Add node_modules
+        working-directory: node_modules
+        run: |
+          git add .
+      - name: Commit changes
         shell: bash
         run: |
           git commit -am "updated npm dependencies"
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.ref }}
+          branch: ${{ github.head_ref }}
