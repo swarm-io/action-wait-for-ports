@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
       - name: Pull
