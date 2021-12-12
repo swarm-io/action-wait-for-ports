@@ -5,6 +5,9 @@ on:
       - main
     paths:
       - 'package.json'
+  push:
+    branches:
+      - main-dependencies
 jobs:
   update-dependencies:
     name: Update dependencies
