@@ -14,14 +14,11 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+#        with:
+#          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v2
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'npm'
       - name: NPM CI
         run: |
           npm ci
