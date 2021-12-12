@@ -1,0 +1,16 @@
+name: Wait for ports
+description: Waits for ports to be available
+inputs:
+  ports:
+    description: Comma separated list of ports to wait for
+    required: true
+  max-wait:
+    description: Max time in milliseconds to wait
+    required: false
+    default: 30000
+  check-interval:
+    description: How frequently to check ports, in milliseconds
+    default: 5000
+runs:
+  using: node16
+  main: index.js

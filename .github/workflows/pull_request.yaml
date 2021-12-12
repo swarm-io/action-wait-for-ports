@@ -1,0 +1,32 @@
+name: Update dependencies
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+jobs:
+  update-dependencies:
+    name: Update dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Configure git
+        uses: dawidd6/action-git-user-config@v1
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+#          cache: 'npm' uncomment when cache issues are resolved https://github.com/actions/cache/issues/698
+      - name: Run npm install
+        run: |
+          npm install
+      - name: commit
+        shell: bash
+        run: |
+          git commit -am "updated npm dependencies"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.ref }}
