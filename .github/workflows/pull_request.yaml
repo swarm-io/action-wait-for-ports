@@ -42,6 +42,9 @@ jobs:
         shell: bash
         run: |
           git commit -am "updated npm dependencies"
+      - name: Echo branch
+        run: |
+          echo "push should go to ${{ github.head_ref }}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
