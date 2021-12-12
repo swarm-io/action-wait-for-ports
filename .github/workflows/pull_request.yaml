@@ -19,9 +19,9 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
-#      - name: Pull
-#        run: |
-#          git pull
+      - name: Pull
+        run: |
+          git pull
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
