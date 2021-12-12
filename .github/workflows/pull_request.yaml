@@ -18,14 +18,14 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
-#      - name: Setup Node
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: '16'
-#          cache: 'npm'
-      - uses: bahmutov/npm-install@v1
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          useRollingCache: true
+          node-version: '16'
+          cache: 'npm'
+      - name: NPM CI
+        run: |
+          npm ci
       - name: Add node_modules
         working-directory: node_modules
         run: |
