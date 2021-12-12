@@ -17,6 +17,8 @@ jobs:
 #        with:
 #          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v2
+        with:
+          cache: npm
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
       - name: NPM CI
