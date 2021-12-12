@@ -18,7 +18,7 @@ jobs:
       - name: Configure git
         uses: dawidd6/action-git-user-config@v1
       - name: Setup Node
-        uses: actions/setup-node@v1.4.1
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
       - name: npm install
