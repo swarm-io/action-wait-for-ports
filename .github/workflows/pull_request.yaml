@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-          cache: 'npm'
+#          cache: 'npm' uncomment when cache issues are resolved https://github.com/actions/cache/issues/698
       - name: Run npm install
         run: |
           npm install
