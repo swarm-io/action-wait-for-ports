@@ -1,6 +1,6 @@
 {
   "name": "action-wait-for-ports",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A github action to wait for ports to be available",
   "main": "index.js",
   "scripts": {
