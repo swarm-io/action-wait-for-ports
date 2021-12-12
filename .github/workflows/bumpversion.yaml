@@ -21,9 +21,9 @@ jobs:
         uses: dawidd6/action-git-user-config@v1
       - id: get-bump-type
         name: Get bump type
-        uses: swarm-io/action-get-bump-type@1
+        uses: swarm-io/action-get-bump-type@v1
       - name: Bump version
-        uses: swarm-io/action-bump2version@1
+        uses: swarm-io/action-bump2version@v1
         with:
           part: ${{ steps.get-bump-type.outputs.bumpType }}
           verbose: true
